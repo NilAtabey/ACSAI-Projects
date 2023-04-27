@@ -1,0 +1,14 @@
+This course was taught my Professor Spognardi Angelo in collaboration with Maurizio Mancini
+
+Over the course of the semester we learned:
+
+Introduction to programming through the Python language (4 hours)
+Data types, variables, assignments, control structures, functions, classes, modules, and Input/Output (10 hours)
+Basic data structures: arrays, strings, lists, tuples, and dictionaries (16 hours)
+Leverage the basic data structures to design and develop programs through procedural programming and object-oriented programming (8 hours)
+Program debugging and testing (2 hours)
+Differences between recursive and iterative algorithms (12 hours)
+Python libraries for graphics, and file handling (8 hours)
+
+If you would like further information about the course, exercises provided by the lecturers, extra material, and more, contact me at my university email at
+atabey.2045576@studenti.uniroma1.it
