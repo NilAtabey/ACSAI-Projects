@@ -1,0 +1,73 @@
+# NOTES
+# I tried to make this as readable as possible
+# It is very long since there are very conditions and special cases
+# I seperated the homework into 2 parts:
+# 1 - opening the files and getting each word
+# 2 - creating a string from each position and repetition in the words
+# You can read in any order you prefer, I suggest starting from files_to_wordlist
+
+
+#FUNCTION: most_frequent_chars
+The input is:
+    - filename → a string
+
+I use the files_to_wordlist function for filename
+And the result is used inside wordlist_to_count
+Resulting in a final string
+
+---------------------------------------------
+
+#FUNCTION: files_to_wordlist
+The input is:
+    - filename → a string
+
+ • In this function the aim is to open each file and get words from every file
+ • Ultimately resulting in an output which is a list of strings
+
+
+An empty list named wordlist (w_list) is created, this will be the final result
+A variable for nextname (nxname) is created, it is the same as filename
+I used a while loop with the condition True
+	Inside the while loop, an empty list is created - current list (curr_list)
+	   → notice how curr_list is emptied with each cycle
+	nxname is opened, curr_list is extended by the splitted version of the open file
+	nxname is the first item of the current list(index 0)
+	   → therefore making it the name of the "next" file to open
+	curr_list gets added to w_list
+The while loop breaks when nxname is the initial filename
+We return the w_list
+
+---------------------------------------------
+
+#FUNCTION: wordlist_to_count
+The input is:
+    - w_list → a list of strings
+
+ • In this function the aim is to go through the word list, create dictionaries for 
+each index in the words of the list and return the most repeated (if repetitions
+are equal, alphabetically prioritized) letter
+ • I prefered to work with a list of dictionaries
+ • Ultimately resulting in an output that is the final string we need
+
+
+An empty list called final is created
+A list called counts is created and it contains empty dictionaries in every position
+The number of dictionaries in counts is the length of the longest word in w_list
+
+I check the words in w_list one by one through a for loop
+	Another for loop: Enumerate is used for position and letter in words
+	We go into the same position in counts(making us go into a dictionary in the 
+	same position as the letter).
+	The letter is a key of the dictionary and the value is +1
+Now that we have a list of dicts, we need the most repeated letter from the dict
+
+In a for loop going through each dict:
+	The max values are seperated from others in a list
+	I get the first letter of the sorted list 
+	    → this is because we need the alphabetically first one if some
+	      letters repeat the same amount
+
+All of these letters are appended to final
+We return by joining the final list
+
+
