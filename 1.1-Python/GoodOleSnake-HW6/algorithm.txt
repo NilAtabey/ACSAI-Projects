@@ -1,0 +1,50 @@
+
+HW6
+
+I failed to split the problem into smaller problems. I know where to split it from i just dont know how to do so
+---------------------------------------------
+
+#FUNCTION: generate_snake
+The input is:
+    - start_img → name of image to open
+	- out_img → name of image to save
+	- position → a list of 2 integers, y and x of start position
+	- commands → a string of directions seperated by a space
+
+	Variables defined:
+	 → Using the images library the image is loaded in
+	 → A dictionary of directions is created, values corresponding to x,y in tuples (example: "N":(0, -1))
+	 → snake is an empty list
+	 → position is appended to snake (i also changed position to "pos" for clarity and simplicity)
+	
+	for each command:
+		pos is equal to a tuple of two items:
+		→ x of pos + x of item from command dictionary, modulo divison by length of x of image
+		→ y of pos + y of item from command dictionary, modulo divison by length of y of image
+		→ so pos is a tuple of 2 values,[x, y]
+		
+		imgpos is a new variable, which is the pos inside of image (img[nexpos[1]][nexpos[0]])
+		→ therefore imgpos represents a tuple of a color
+		
+		there are 4 cases represented with if/elif/else statements from now on:
+		
+		• if a direction is diagonal AND the next position has 2 green pixels on the according sides
+			program terminates (using break)
+		
+		• if imgpos is orange → if the next position to go to is food
+			pos is appended to snake			
+			pos is dyed green
+			
+		• if imgpos is red OR if pos is in the list snake → if the next position to go to is red or is green
+			program terminates (using break)			
+		
+		• else → if the next position to go to is a gray or black space
+			pos is appended to snake
+			a variable called "togray" is created, equal to the 0th element of snake (so it's the tail), using list.pop()
+			togray in image is dyed gray
+			imgpos is dyed green
+			
+	every item in the list snake is dyed green before ending the program
+	image is saved, length of snake is returned		
+
+---------------------------------------------
