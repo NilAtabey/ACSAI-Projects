@@ -1,0 +1,33 @@
+# current efficieny is about 3.9 
+# the order to read is 3rd, 4th, 2nd, 1st
+
+1- def decode_XKCD_tuple(xkcd_values, k):
+    the defined function takes a list of xkcd values as input and the number of biggest values to return (k)
+    creates a list with all integer values using the decode_value function
+    sorts the list and reverses the list (since the sort function does this in an descending order)
+    returns the number of items until the k'th point in the integer list
+
+2- def decode_value(xkcd):
+    return list_of_weights_to_number(xkcd_to_list_of_weights(xkcd))
+     
+
+3- def xkcd_to_list_of_weights(xkcd):
+    creates an empty list called weights
+    for each character in the given string
+    if the character is a zero, it adds '0' to the last element in weights
+    if not, it appends to weights
+    string list weights → integer list weights
+
+4- def list_of_weights_to_number(weights):
+    works with the integer list weights from the function above
+    subtotal 0
+    for each element in weights
+    if element is not the last element
+    continue with the following:
+        variable next is element+1
+        if element < next, subtract element from the subtotal
+        else, add element to subtotal
+    if element is the last element just add it to the total
+    return subtotal
+
+##################################################################################
